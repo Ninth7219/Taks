@@ -20,10 +20,10 @@ int main(){
         cout << "Введите время полета в секундах:";
         Input_validation = scanf ("%lf", &time);
         if(Input_validation != 1){
-            printf("Ошибка ввода: введена буква");
+            cout << "Ошибка ввода: введена буква";
             getchar();
         }
-    }while(Input_validation != 1);
+    }while(Input_validation !=   1);
     cout << "\n";
 
     double Height_from_the_bottom = Speed*time*cos(alfa);

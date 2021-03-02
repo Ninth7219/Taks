@@ -1,6 +1,6 @@
 /**
-    Author: Ботвин Степан
-    Group: СБС 001-О-001 / 1
+    Author: Р‘РѕС‚РІРёРЅ РЎС‚РµРїР°РЅ
+    Group: РЎР‘РЎ 001-Рћ-001 / 1
     Taks#: 1.4
 */
 
@@ -17,10 +17,10 @@ int main(){
     bool Input_validation;
 
     do{
-        cout << "Введите время полета в секундах:";
+        cout << "Р’РІРµРґРёС‚Рµ РІСЂРµРјСЏ РїРѕР»РµС‚Р° РІ СЃРµРєСѓРЅРґР°С…:";
         Input_validation = scanf ("%lf", &time);
         if(Input_validation != 1){
-            printf("Input error: input value is not a number\n");
+            printf("РћС€РёР±РєР° РІРІРѕРґР°: РІРІРµРґРµРЅР° Р±СѓРєРІР°");
             getchar();
         }
     }while(Input_validation != 1);
@@ -29,9 +29,9 @@ int main(){
     double Height_from_the_bottom = Speed*time*cos(alfa);
     Height_from_the_bottom = Height_from_the_bottom > 0 ? Height_from_the_bottom*1 : Height_from_the_bottom*-1;
 
-    double Destance_from_edge_to_cliff = Height + Height_from_the_bottom - (9.81*time*time)/2;
+    double Destance_from_edge_to_cliff = Height + Speed*time*sin(alfa) - (9.8*time*time)/2;
     Destance_from_edge_to_cliff = Destance_from_edge_to_cliff > 0 ? Destance_from_edge_to_cliff*1 : Destance_from_edge_to_cliff*-1;
 
-    cout << "Высота от дна обрыва = " << Height_from_the_bottom << "\n""Расстояние до края обрыва = " << Destance_from_edge_to_cliff << "\n";
+    cout << "Р’С‹СЃРѕС‚Р° РѕС‚ РґРЅР° РѕР±СЂС‹РІР° = " << Height_from_the_bottom << "\n""Р Р°СЃСЃС‚РѕСЏРЅРёРµ РґРѕ РєСЂР°СЏ РѕР±СЂС‹РІР° = " << Destance_from_edge_to_cliff << "\n";
     return 0;
 }

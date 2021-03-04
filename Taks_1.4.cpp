@@ -15,15 +15,18 @@ int main(){
     const double Speed=9, Height=15, alfa=35;
     double time;
     bool Input_validation;
-
+    
     do{
-        cout << "Введите время полета в секундах:";
-        Input_validation = scanf ("%lf", &time);
-        if(Input_validation != 1){
-            cout << "Ошибка ввода: введена буква";
-            getchar();
-        }
-    }while(Input_validation !=   1);
+        do{
+            cout << "Введите время полета в секундах:";
+            Input_validation = scanf ("%lf", &time);
+            if(Input_validation != 1){
+                cout << "Ошибка ввода: введена буква";
+                getchar();
+            }
+        }while(Input_validation !=   1);
+            cout << "Ошибка ввода: введено отрицательное число"
+    }while(time<0);
     cout << "\n";
 
     double Height_from_the_bottom = Speed*time*cos(alfa);

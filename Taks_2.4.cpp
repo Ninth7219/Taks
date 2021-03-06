@@ -1,6 +1,6 @@
 /**
-    Author: Ботвин Степан
-    Group: СБС 001-О-001 / 1
+    Author: Р‘РѕС‚РІРёРЅ РЎС‚РµРїР°РЅ
+    Group: РЎР‘РЎ 001-Рћ-001 / 1
     Taks#: 2.4
 */
 
@@ -16,10 +16,10 @@ int main(){
     const int n = 10;
     bool Input_validation;
     do{
-            cout << "Введите число х:";
+            cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ x:";
             Input_validation = scanf ("%d", &x);
             if(Input_validation != 1){
-                cout << "Ошибка ввода: введена буква" << endl;
+                cout << "РћС€РёР±РєР° РІРІРѕРґР°: РІРІРµРґРµРЅР° Р±СѓРєРІР°" << endl;
                 getchar();
             }
         }while(Input_validation != 1);

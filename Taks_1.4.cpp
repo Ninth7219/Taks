@@ -15,26 +15,35 @@ int main(){
     const double Speed=9, Height=15, alfa=35;
     double time;
     bool Input_validation;
+
+    double Time_flight = ((Speed*sin(alfa))/9,8)*(1 + (sqrt(1 + (2*9,8*Height)/pow(Speed, 2)*pow(sin(alfa), 2))));
+    
     do{
         do{
-            cout << "Введите время полета в секундах:";
-            Input_validation = scanf ("%lf", &time);
-            if(Input_validation != 1){
-                cout << "Ошибка ввода: введена буква" << endl;
-                cin.ignore(getchar(), '\n');
-            }
-        }while(Input_validation != 1);
-        if(time < 0)
-        cout << "Ошибка ввода: введено отрицательное число" << endl;
-    }while(time < 0);
+            do{
+                cout << "Введите время полета в секундах:";
+                Input_validation = scanf ("%lf", &time);
+                if(Input_validation != 1){
+                    cout << "Ошибка ввода: введена буква" << endl;
+                    cin.ignore(getchar(), '\n');
+                }
+            }while(Input_validation != 1);
+            if(time < 0)
+                cout << "Ошибка ввода: введено отрицательное число" << endl;
+        }while(time < 0);
+        if(time >Time_flight)
+            cout << "Ошибка ввода: введёное время превышает время полёта камня" << endl;
+    }while(time > Time_flight);
     cout << "\n";
 
-    double Height_from_the_bottom = Speed*time*cos(alfa);
-    Height_from_the_bottom = Height_from_the_bottom > 0 ? Height_from_the_bottom*1 : Height_from_the_bottom*-1;
+    double Cliff_height = Speed*time*cos(alfa);
+    Cliff_height = Cliff_height > 0 ? Cliff_height*1 : Cliff_height*-1;
 
-    double Destance_from_edge_to_cliff = Height + Speed*time*sin(alfa) - (9.8*time*time)/2;
-    Destance_from_edge_to_cliff = Destance_from_edge_to_cliff > 0 ? Destance_from_edge_to_cliff*1 : Destance_from_edge_to_cliff*-1;
+    double Destance_cliff = Height + Speed*time*sin(alfa) - (9.8*time*time)/2;
+    Destance_cliff = Destance_cliff > 0 ? Destance_cliff*1 : Destance_cliff*-1;
 
-    cout << "Высота от дна обрыва = " << Height_from_the_bottom << "\n""Расстояние до края обрыва = " << Destance_from_edge_to_cliff << "\n";
+    cout << "Высота от дна обрыва = " << Cliff_height << endl
+         << "Расстояние до края обрыва = " << Destance_cliff << endl
+         << "Время полёта камня = " << Time_flight << endl;
     return 0;
 }

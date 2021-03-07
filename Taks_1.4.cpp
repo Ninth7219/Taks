@@ -37,10 +37,10 @@ int main(){
     cout << "\n";
 
     double Cliff_height = Speed*time*cos(alfa);
-    Cliff_height = Cliff_height > 0 ? Cliff_height*1 : Cliff_height*-1;
+    Cliff_height = abs(Cliff_height);
 
     double Destance_cliff = Height + Speed*time*sin(alfa) - (9.8*time*time)/2;
-    Destance_cliff = Destance_cliff > 0 ? Destance_cliff*1 : Destance_cliff*-1;
+    Destance_cliff = abs(Destance_cliff);
 
     cout << "Высота от дна обрыва = " << Cliff_height << endl
          << "Расстояние до края обрыва = " << Destance_cliff << endl

@@ -25,7 +25,7 @@ int main(){
             }
         }while(Input_validation != 1);
         if(time < 0)
-        cout << "Ошибка ввода: введено отрицательное число";
+        cout << "Ошибка ввода: введено отрицательное число" << endl;
     }while(time < 0);
     cout << "\n";
 
